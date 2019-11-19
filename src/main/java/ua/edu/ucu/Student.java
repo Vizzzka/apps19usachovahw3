@@ -35,7 +35,8 @@ class Student {
 
     @Override
     public String toString() {
-        return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+        return "Student{name=" + name + ", surname=" +
+                surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
 
     @Override
@@ -43,15 +44,14 @@ class Student {
         if (!(o2 instanceof Student)) {
             return false;
         }
-
-        return this.name.equals(((Student) o2).name) &&
-                this.surname.equals(((Student) o2).surname);
+        return this.name.equals(((Student) o2).name)
+                && this.surname.equals(((Student) o2).surname);
     }
 
     @Override
     public int hashCode() {
-        return this.name.hashCode() +
-                this.surname.hashCode();
+        return this.name.hashCode()
+                + this.surname.hashCode();
     }
 
 }
