@@ -11,12 +11,12 @@ import static org.junit.Assert.*;
 
 public class ArrayDecoratorsTest {
     @Test
-    public void testSortDecorator(){
+    public void testSortDecorator() {
         SmartArray smartArray = new BaseArray(new Integer[] {3, 4, 5, 2, 1});
         MyComparator cmp = new MyComparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                return ((Integer)o1).compareTo((Integer)o2);
+                return ((Integer) o1).compareTo((Integer) o2);
             }
         };
         Object[] expected = {1, 2, 3, 4, 5};
@@ -32,11 +32,12 @@ public class ArrayDecoratorsTest {
         MyPredicate predicate = new MyPredicate() {
             @Override
             public boolean test(Object o) {
-                return (Integer)o > 3;
+                return (Integer) o > 3;
             }
         };
         Object[] expected = {4, 5};
-        Object[] result = (new FilterDecorator(smartArray, predicate)).toArray();
+        Object[] result = (new FilterDecorator(smartArray,
+                predicate)).toArray();
 
         assertArrayEquals(expected, result);
     }
@@ -52,7 +53,7 @@ public class ArrayDecoratorsTest {
         MyFunction func = new MyFunction() {
             @Override
             public Object apply(Object o) {
-                return new House(((House)o).getAddress(), 0.0);
+                return new House(((House) o).getAddress(), 0.0);
             }
         };
         h1 = new House("Lipetska4", 0.0);

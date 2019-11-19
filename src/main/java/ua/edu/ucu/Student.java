@@ -3,7 +3,7 @@ package ua.edu.ucu;
 
 // import com.sun.org.apache.xpath.internal.operations.Bool;
 
-class Student{
+class Student {
 
     private double GPA;
     private int year;
@@ -39,15 +39,19 @@ class Student{
     }
 
     @Override
-    public boolean equals(Object o2){
-        if (!(o2 instanceof Student))
+    public boolean equals(Object o2) {
+        if (!(o2 instanceof Student)) {
             return false;
-        return this.name.equals(((Student)o2).name) && this.surname.equals(((Student)o2).surname);
+        }
+
+        return this.name.equals(((Student) o2).name) &&
+                this.surname.equals(((Student) o2).surname);
     }
 
     @Override
-    public int hashCode(){
-        return this.name.hashCode() + this.surname.hashCode();
+    public int hashCode() {
+        return this.name.hashCode() +
+                this.surname.hashCode();
     }
 
 }
