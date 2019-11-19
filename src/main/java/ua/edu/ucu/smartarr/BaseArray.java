@@ -4,22 +4,22 @@ package ua.edu.ucu.smartarr;
 public class BaseArray implements SmartArray {
     private Object[] elements;
 
-    public BaseArray(Object[] elements){
+    public BaseArray(Object[] elements) {
         this.elements = elements.clone();
     }
 
     @Override
-    public Object[] toArray(){
+    public Object[] toArray() {
         return this.elements.clone();
     }
 
     @Override
-    public String operationDescription(){
+    public String operationDescription() {
         return "No decorator";
     }
 
     @Override
-    public int size(){
+    public int size() {
         return this.elements.length;
     }
 
